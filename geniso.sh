@@ -15,7 +15,7 @@
 #deb http://download.virtualbox.org/virtualbox/debian/ jessie contrib
 #===========================================================
 #!/bin/bash
-DATE=_`date "+%Y%m%d-%Hh%Mm"`
+DATE=_`date "+%Y%m%d-%Hh%M"`
 apt-get update -y && apt-get upgrade -y
 clear
 apt-get install wget unzip bsdtar genisoimage git -y
