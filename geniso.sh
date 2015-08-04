@@ -17,7 +17,9 @@
 #!/bin/bash
 DATE=_`date "+%Y%m%d-%Hh%Mm"`
 apt-get update -y && apt-get upgrade -y
-apt-get install wget unzip bsdtar genisoimage
+clear
+apt-get install wget unzip bsdtar genisoimage git
+sleep 30
 cd /root
 wget http://cdimage.debian.org/debian-cd/8.1.0/amd64/iso-cd/debian-8.1.0-amd64-CD-1.iso
 mkdir /root/debian-8.1.0-amd64-preseed
@@ -27,10 +29,12 @@ mv debian-8.1.0-amd64-preseed/install.amd/initrd.gz initrd-preseed/
 cd /root/initrd-preseed/
 gunzip -c initrd.gz | cpio -id
 rm /root/initrd-preseed/initrd.gz
-wget https://github.com/stefviv/Jessie/blob/master/preseed.cfg
+git clone https://github.com/stefviv/Jessie;
+cp /root/Jessie/preseed.cfg /root/initrd-preseed/
 chmod 755 /root/initrd-preseed/preseed.cfg
 find . | cpio -H newc --create --verbose | gzip -9 > /root/debian-8.1.0-amd64-preseed/install.amd/initrd.gz
 cd /root/debian-8.1.0-amd64-preseed/
 ### lrwxrwxrwx  1 root root 1 fevr.  8 14:46 debian -> .
 unlink /root/debian-8.1.0-amd64-preseed/debian
 genisoimage -o ../debian-8.1.0-amd64-preseed"$DATE".iso -r -J -no-emul-boot -boot-load-size 4 -boot-info-table -b isolinux/isolinux.bin -c isolinux/boot.cat .
+ls -lh /root/debian-8.1.0-amd64-preseed*.iso
