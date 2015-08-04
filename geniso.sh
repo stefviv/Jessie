@@ -17,7 +17,7 @@
 #!/bin/bash
 DATE=_`date "+%Y%m%d-%Hh%Mm"`
 apt-get update -y && apt-get upgrade -y
-apt-get install wget gunzip bsdtar genisoimage
+apt-get install wget unzip bsdtar genisoimage
 cd /root
 wget http://cdimage.debian.org/debian-cd/8.1.0/amd64/iso-cd/debian-8.1.0-amd64-CD-1.iso
 mkdir /root/debian-8.1.0-amd64-preseed
