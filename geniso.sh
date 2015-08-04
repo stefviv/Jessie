@@ -18,7 +18,7 @@
 DATE=_`date "+%Y%m%d-%Hh%Mm"`
 apt-get update -y && apt-get upgrade -y
 clear
-apt-get install wget unzip bsdtar genisoimage git
+apt-get install wget unzip bsdtar genisoimage git -y
 sleep 30
 cd /root
 wget http://cdimage.debian.org/debian-cd/8.1.0/amd64/iso-cd/debian-8.1.0-amd64-CD-1.iso
