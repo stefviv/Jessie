@@ -29,6 +29,7 @@ mv debian-8.1.0-amd64-preseed/install.amd/initrd.gz initrd-preseed/
 cd /root/initrd-preseed/
 gunzip -c initrd.gz | cpio -id
 rm /root/initrd-preseed/initrd.gz
+cd /root
 git clone https://github.com/stefviv/Jessie;
 cp /root/Jessie/preseed.cfg /root/initrd-preseed/
 chmod 755 /root/initrd-preseed/preseed.cfg
