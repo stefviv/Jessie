@@ -33,6 +33,7 @@ cd /root
 git clone https://github.com/stefviv/Jessie;
 cp /root/Jessie/preseed.cfg /root/initrd-preseed/
 chmod 755 /root/initrd-preseed/preseed.cfg
+cd /root/initrd-preseed/
 find . | cpio -H newc --create --verbose | gzip -9 > /root/debian-8.1.0-amd64-preseed/install.amd/initrd.gz
 cd /root/debian-8.1.0-amd64-preseed/
 ### lrwxrwxrwx  1 root root 1 fevr.  8 14:46 debian -> .
