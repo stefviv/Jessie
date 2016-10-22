@@ -1,5 +1,70 @@
-git add * --all
-git commit -m "MAJ"
-git push origin master
-test
-test
+root@DEBIAN:~# apt-get install git
+stefviv@DEBIAN:~$ cd /home/stefviv/
+stefviv@DEBIAN:~$ mkdir Git
+stefviv@DEBIAN:~$ cd Git/
+stefviv@DEBIAN:~/Git$ git config --global user.name "stefviv"
+stefviv@DEBIAN:~/Git$ git config --global user.mail "stefviv@XXXXX.XX"
+stefviv@DEBIAN:~/Git$ git clone https://github.com/stefviv/Jessie.git
+=========================================================
+Clonage dans 'Jessie'...
+remote: Counting objects: 134, done.
+remote: Total 134 (delta 0), reused 0 (delta 0), pack-reused 134
+Réception d'objets: 100% (134/134), 49.14 MiB | 1.35 MiB/s, fait.
+Résolution des deltas: 100% (57/57), fait.
+Vérification de la connectivité... fait.
+============================================================
+stefviv@DEBIAN:~/Git$ cd Jessie/
+stefviv@DEBIAN:~/Git/Jessie$ nano githelp.txt
+stefviv@DEBIAN:~/Git/Jessie$ git add * --all
+stefviv@DEBIAN:~/Git/Jessie$ git commit -m "MAJ"
+============================================================
+[master 04f0479] MAJ
+ Committer: stefviv <tech@DEBIAN>
+Votre nom et votre adresse e-mail ont été configurés automatiquement en se fondant
+sur votre nom d'utilisateur et le nom de votre machine. Veuillez vérifier qu'ils sont corrects.
+Vous pouvez supprimer ce message en les paramétrant explicitement :
+
+    git config --global user.name "Votre Nom"
+    git config --global user.email vous@exemple.com
+
+Après ceci, vous pouvez corriger l'identité utilisée pour ce commit avec :
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+============================================================
+
+stefviv@DEBIAN:~/Git/Jessie$ git push
+
+============================================================
+warning: push.default n'est pas défini ; sa valeur implicite a changé dans Git 2.0
+de 'matching' vers 'simple'. Pour supprimer ce message et maintenir
+le comportement actuel après la modification de la valeur de défaut, utilisez :
+
+  git config --global push.default matching
+
+Pour supprimer ce message et adopter le nouveau comportement maintenant, utilisez :
+
+  git config --global push.default simple
+
+Quand push.default vaudra 'matching', git poussera les branches locales
+sur les branches distantes qui existent déjà avec le même nom.
+
+Depuis Git 2.0, Git utilise par défaut le comportement plus conservatif 'simple'
+qui ne pousse la branche courante que vers la branche distante correspondante
+que 'git pull' utilise pour mettre à jour la branche courante.
+
+Voir 'git help config' et chercher 'push.default' pour plus d'information.
+(le mode 'simple' a été introduit dans Git 1.7.11. Utilisez le mode similaire
+'current' au lieu de 'simple' si vous utilisez de temps en temps d'anciennes versions de Git)
+
+Username for 'https://github.com': stefviv
+Password for 'https://stefviv@github.com':
+Décompte des objets: 3, fait.
+Compression des objets: 100% (3/3), fait.
+Écriture des objets: 100% (3/3), 308 bytes | 0 bytes/s, fait.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/stefviv/Jessie.git
+   6ed33f2..04f0479  master -> master
+============================================================
