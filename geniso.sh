@@ -1,3 +1,4 @@
+#!/bin/bash
 #==== Generation d'une ISO avec son preseed.cfg =============
 # cat /etc/apt/sources.list
 ## jessie - ftp.fr.debian.org/debian
@@ -14,9 +15,8 @@
 ## Jessie - download.virtualbox.org
 #deb http://download.virtualbox.org/virtualbox/debian/ jessie contrib
 #===========================================================
-#!/bin/bash
 DATE=_`date "+%Y%m%d-%Hh%M"`
-VER=8.6.0
+VER=8.7.1
 apt-get update -y && apt-get upgrade -y
 clear
 apt-get install wget unzip bsdtar genisoimage git -y
